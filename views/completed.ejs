@@ -1,0 +1,41 @@
+<h1>有料会員 登録完了</h1>
+<p>ご登録ありがとうございます。会員情報および請求書は下記のとおりです。</p>
+
+<h2>会員情報</h2>
+<dl>
+    <dt>お名前:</dt>
+    <dd><%= name %></dd>
+    <dt>あなたのIPアドレス</dt>
+    <dd><%= req.ip %></dd>
+    <% if (ua.device.model !== undefined) { %>
+        <dt>登録端末</dt>
+        <dd><%= ua.device.model %></dd>
+    <% } %>
+    <dt>登録ブラウザ(バージョン)</dt>
+    <dd><%= ua.browser.name %>&nbsp;(<%= ua.browser.version %>)</dd>
+    <dt>登録OS(バージョン)</dt>
+    <dd><%= ua.os.name %>&nbsp;(<%= ua.os.version %>)</dd>
+</dl>
+<h2>請求書</h2>
+<dl>
+    <dt>請求金額</dt>
+    <dd>10,000円</dd>
+    <dt>期限</dt>
+    <dd>本日から14日以内(<%= limit %> まで)</dd>
+    <dt>金融機関名</dt>
+    <dd>○○銀行 ××支店</dd>
+    <dt>支店番号</dt>
+    <dd>000</dd>
+    <dt>口座番号</dt>
+    <dd>0123456</dd>
+
+</dl>
+
+<h3>見えるもの一覧</h3>
+<pre>
+    ヘッダー情報
+        <%= JSON.stringify(req.headers, null, 2) %>
+
+    User-Agent 解析結果
+        <%= JSON.stringify(ua, null, 2) %>
+</pre>
