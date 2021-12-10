@@ -8,6 +8,7 @@ const port = 80,
 app.set("view engine", "ejs");
 app.use(layouts);
 app.use("/", router);
+app.use(express.static("public"));
 
 app.listen(port, "0.0.0.0", () => {
 
