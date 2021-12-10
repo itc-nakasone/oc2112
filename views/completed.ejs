@@ -3,8 +3,6 @@
 
 <h2>会員情報</h2>
 <dl>
-    <dt>お名前:</dt>
-    <dd><%= name %></dd>
     <dt>あなたのIPアドレス</dt>
     <dd><%= req.ip %></dd>
     <% if (ua.device.model !== undefined) { %>
@@ -15,20 +13,21 @@
     <dd><%= ua.browser.name %>&nbsp;(<%= ua.browser.version %>)</dd>
     <dt>登録OS(バージョン)</dt>
     <dd><%= ua.os.name %>&nbsp;(<%= ua.os.version %>)</dd>
+    <dt>詳細情報</dt>
+    <dd><%= req.headers["user-agent"] %></dd>
 </dl>
 <h2>請求書</h2>
 <dl>
     <dt>請求金額</dt>
-    <dd>10,000円</dd>
+    <dd>100円</dd>
     <dt>期限</dt>
-    <dd>本日から14日以内(<%= limit %> まで)</dd>
+    <dd><%= limit %></dd>
     <dt>金融機関名</dt>
     <dd>○○銀行 ××支店</dd>
     <dt>支店番号</dt>
     <dd>000</dd>
     <dt>口座番号</dt>
     <dd>0123456</dd>
-
 </dl>
 
 <h3>見えるもの一覧</h3>

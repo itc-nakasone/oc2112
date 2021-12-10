@@ -2,7 +2,7 @@ import express from "express";
 import layouts from "express-ejs-layouts";
 import {router} from "./router.mjs";
 
-const port = 3000,
+const port = 80,
     app = express();
 
 app.set("view engine", "ejs");
